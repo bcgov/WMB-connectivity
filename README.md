@@ -120,14 +120,20 @@ Visually verify secondary reserves ,Aspatially Deferred and conservation lands <
 
 
 ## running step 4- scenario5_step4_summary.ipynb
-Before running the script check the variables in the first cell **scen5_run_number** and **scen5_run_folder**
+Before running the script check the variables in the first cell **scen5_run_number** and **scen5_run_folder** <br>
+
+All spatial data for this step has been created in previous steps
+
+input tables for the summary include 
+- WMB and TSU area tables include the unique idenitifier (Basin Name, or Trapline identifier), 'total_ha' the total area of each in ha, the SUM_aflb_ha the total aflb for each area taken from scenario 4.5 adjusted targets tables, and percent target 25% of WMB and 33% of TSU
+- wmb_recuirtment table is the 25% total of each forest representaion from the bottom of the recruitment tables 
+- wmb_for_rep table the total sum of AFLB for each rec cat/ for rep for each basin
 
 
 # old forest outside of conservation lands and aspatially deferred old forest
 - query vri for stands >= than 140
 - clip vri to priority wmb
-- union wmb, tus, and thlb to vri selection
-- recalculate area_ha, thlb_area_ha
+- union wmb, tsu, and thlb to vri selection
 - erase conservation lands and aspatially deferred old from union layer 
 - recalculate area_ha, thlb_area_ha
 - summarize erased area by wmb 
