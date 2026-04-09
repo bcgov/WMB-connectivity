@@ -79,6 +79,8 @@ def get_short(FOR_REP):
 
 
 ## running step 2- scenario5_step2.ipynb
+before running check that the SQL query match the input tables and that the 'rules' dictionarys for 2a and b are correct
+
 scenario5_step2.ipynb can be run entierly if the sections for stepc and step d are put back in, but they run extermely slow. 
 
 **For Best Results**
@@ -103,18 +105,20 @@ Continue running the rest of the cells for scenario5_step2.ipynb
 Before running the script check the variables in the first cell **patche_area_3a** and **max_rings**
 run cells up to the end of 3j
 ## manual steps for secondary reserves aspatial deferred old forest and conservations lands 
-### Conservation lands
-- merge hv1 protections, secondary reserves and Aspatially Deferred Old Forest inside TSUs
-- remove any areas that overlap hv1 development and critical infrastructures 
 
 for each layer
 - if not already dissolved, dissolve it for a 'clean' slate of attributes 
 - create new attribute 'Designation' (text), populate with layer name (conservation lands, etc)
+- erase HV1 dz and critical infrastructure and electrification infrastructure from dataset, so there are none overlapping  
 - union dissolved layer with wmb, tsu(split by wmb), forest recruitment, thlb layer and AFLB
 - select polygons that have the designation column populated
-- erase HV1 dz and critical infrastructure and electrification infrastructure from dataset, so there are none overlapping  
 - export data set with the following attributes: designation, BASIN_ID, NAME, TRAPLINE_AREA_IDENTIFIER,  SIFA, SIFA_2, For_REP, Rec_Cat, for_rep_short, thlb_fact, afhlb_fact, area_ha, thlb_area_ha, aflb_ha
 - recalculate area_ha, thlb_area_ha (thlb_fact*area_ha) and aflb_ha(aflb_fact*area_ha) 
+
+### Conservation lands
+- merge hv1 protections, secondary reserves and Aspatially Deferred Old Forest inside TSUs
+- remove any areas that overlap hv1 development and critical infrastructures 
+- follow steps above 'for each layer'
 
 Visually verify secondary reserves ,Aspatially Deferred and conservation lands <br>
 
