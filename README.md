@@ -38,7 +38,7 @@ All spatail data was converted to geo parquets from various .gdbs
 # rec_class_all set up
 - merge all rec forest from RecruitmentForest_2025_01_14.gdb into one, and clip to priority WMB 
 - calculte Rec_Cat_short (Rec_Cat_short is a typo that continued throughout the scripts Rec_Cat_short, should actually be For_Rep_Short but is hard coded intot to many places in the script)    
-    ```
+```
 def get_short(FOR_REP):
     if FOR_REP =='High Productivity Coniferous Leading':
         return 'HPC'
@@ -58,15 +58,16 @@ def get_short(FOR_REP):
         return 'MPD'
     elif FOR_REP == 'Medium Productivity Mixedwood':
         return 'MPM'
-    ```
-    - use identity to attach aflb_fact to rec_cat_all from AFLB layer 
-    - recalculate aflb_area_ha
-    - multipart to single part 
-    - create field priority_2d (int)
-    - select by location (within) all Cultural areas, calculate priority_2d to 3 
-    - select by locaiton (within) all tsu, priority_2d field to 2 
-    - intersect cultural areas and tsu, select by location (within) of the interesct and priority_2d field to 1
-    - for processing speed remove all fields accept for SIFA, SIFA2, FOR_REP, NEW_AGE_CLASS, Orig_Age, WATER_MANAGMENT_BASIN_NAME, Area_ha, Rec_Cat, Rec_Cat_short, thlb_fact, aflb_fact, aflb_area_ha, priority_2d
+```<br>
+- use identity to attach aflb_fact to rec_cat_all from AFLB layer and TSU and WMB if not already included 
+- recalculate aflb_area_ha
+- multipart to single part 
+- create field priority_2d (int)
+- select by location (within) all Cultural areas, calculate priority_2d to 3 
+- select by locaiton (within) all tsu, priority_2d field to 2 
+- intersect cultural areas and tsu, select by location (within) of the interesct and priority_2d field to 1
+- for processing speed remove all fields accept for SIFA, SIFA2, FOR_REP, NEW_AGE_CLASS, Orig_Age, WATER_MANAGMENT_BASIN_NAME, Area_ha, Rec_Cat, Rec_Cat_short, thlb_fact, aflb_fact, aflb_area_ha, priority_2d
+
 <br>
 <br>
 
